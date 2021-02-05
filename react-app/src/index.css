@@ -1,1 +1,34 @@
 /* TODO Add site wide styles */
+body{
+    background-image: url(./islandArt4k.png);
+    background-repeat: no-repeat;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #7C838D;
+    background-size: 100%;
+}
+/* Nav bar styles */
+#root{
+    margin-top: 0;
+    padding-top: 0;
+}
+nav{
+    background-image: linear-gradient(
+        rgb(163, 185, 219) 0%,
+        /* rgba(200,200,200,1.0) 35%, */
+        rgba(163, 185, 219, 0.5) 100%
+    );
+    backdrop-filter: blur(4px);
+    height: 3em;
+    margin-bottom: 1em;
+}
+nav ul{
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    margin-top: 0;
+}
+nav ul li{
+    margin-top: 0.7em;
+}
