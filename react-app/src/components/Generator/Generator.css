@@ -1,0 +1,29 @@
+input[type=checkbox]{
+    display: none;
+}
+input[type=checkbox] + label{
+    padding-left: 2em;
+}
+input[type=checkbox] + label img:hover{
+    box-shadow: 2 2 10px 5px rgb(34, 35, 36);
+    border: 2px solid black;
+}
+/* Adds an outer glow effect to any checked mana symbol */
+input[type=checkbox] + label img{
+    border-radius: 50%;
+}
+#white-selector:checked + label img{
+    box-shadow: 0 0 28px 18px rgb(221, 215, 179);
+}
+#blue-selector:checked + label img{
+    box-shadow: 0 0 28px 18px rgb(0, 140, 255);
+}
+#black-selector:checked + label img{
+    box-shadow: 0 0 28px 18px rgb(34, 35, 36);
+}
+#red-selector:checked + label img{
+    box-shadow: 0 0 28px 18px rgb(250, 64, 64);
+}
+#green-selector:checked + label img{
+    box-shadow: 0 0 28px 18px rgb(11, 155, 78);
+}

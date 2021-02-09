@@ -8,6 +8,7 @@ import UsersList from "./components/UsersList";
 import User from "./components/User";
 import { authenticate } from "./services/auth";
 import Home from "./components/Home/Home";
+import Generator from "./components/Generator/Generator";
 
 function App() {
   const [authenticated, setAuthenticated] = useState(false);
@@ -40,9 +41,9 @@ function App() {
         <Route path="/sign-up" exact={true}>
           <SignUpForm authenticated={authenticated} setAuthenticated={setAuthenticated} />
         </Route>
-        <ProtectedRoute path="/users" exact={true} authenticated={authenticated}>
-          <UsersList/>
-        </ProtectedRoute>
+        <Route path="/generator" exact={true}>
+          <Generator />
+        </Route>
         <ProtectedRoute path="/users/:userId" exact={true} authenticated={authenticated}>
           <User />
         </ProtectedRoute>
