@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import LogoutButton from './auth/LogoutButton';
 import '../index.css'
@@ -13,41 +13,41 @@ import '../index.css'
 
 const NavBar = ({ setAuthenticated }) => {
 
-  // const mySideNav = useRef(null);
-  // const backdrop = useRef(null);
+  const [mySideNav, setMySideNav] = useState('sidenav-container');
+  const [backdrop, setBackdrop] = useState('backdrop-container');
 
-  // function openNav() {
-  //     document.getElementById("mySidenav").style.width = "33%" //opens side navbar by 70 percent
-  //     document.getElementById('backdrop').style.display = "block" //displays overlay
-  // }
+  function openNav() {
+      setMySideNav('sidenav-container-openNav')
+      setBackdrop('backdrop-container-openNav')
+  }
 
-  // function closeNav() {
-  //     mySideNav.style.width = "0"
-  //     document.getElementById('backdrop').style.display = "none"
-  // }
+  function closeNav() {
+    setMySideNav('sidenav-container');
+    setBackdrop('backdrop-container');
+  }
 
 
   return (
     <div>
-      {/* <mySideNav ref={mySideNav} id="mySidenav" className="sidenav-container">
+      <div className={mySideNav}>
 
         <span className="drawer-close-button">
-          <a href="javascript:void(0)" className="closebtn" onclick={closeNav()}>&times;</a>
+          <a href="javascript:void(0)" className="closebtn" onClick={() => closeNav()}>&times;</a>
         </span>
 
-        <NavLink to="/" onclick={closeNav()} id="home-link">Home</NavLink>
-        <NavLink to="/generator" onclick={closeNav()} id="about-link">Generator</NavLink>
-        <NavLink to="/login" onclick={closeNav()} id="works-link">Login</NavLink>
-        <NavLink to="/signup" onclick={closeNav()} id="contact-link">Signup</NavLink>
+        <NavLink to="/" onClick={() => closeNav()} id="home-link">Home</NavLink>
+        <NavLink to="/generator" onClick={() => closeNav()} id="about-link">Generator</NavLink>
+        <NavLink to="/login" onClick={() => closeNav()} id="works-link">Login</NavLink>
+        <NavLink to="/signup" onClick={() => closeNav()} id="contact-link">Signup</NavLink>
 
-      </mySideNav>
+      </div>
 
-      <Backdrop ref={backdrop} className="backdrop-container" id="backdrop" /> */}
+      <div className="backdrop-container" id="backdrop" ></div>
 
       <nav>
-        {/* <div id='span-nav'>
-          <span onclick={openNav()} className="mobile-nav-open-icon">&#9776;</span>
-        </div> */}
+        <div id='span-nav'>
+          <span onClick={() => openNav()} className="mobile-nav-open-icon">&#9776;</span>
+        </div>
         <ul>
           <li>
             <NavLink to="/" exact={true} activeClassName="active">

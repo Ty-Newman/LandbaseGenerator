@@ -35,8 +35,23 @@ nav ul li{
 
 
 /* Responsive nav drawer */
-/* .backdrop-container{
+.backdrop-container{
     display: none;
+    position: fixed;
+    z-index: 2;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+    -webkit-animation: fadeIn 1.2s ease-in-out;
+    animation: fadeIn 1.2s ease-in-out;
+}
+
+.backdrop-container-openNav{
+    display: block;
     position: fixed;
     z-index: 2;
     left: 0;
@@ -52,15 +67,16 @@ nav ul li{
 
 #span-nav{
     width: 100%;
-    height: 10vh;
     display: flex;
     justify-content: space-between;
     align-items: center;
     position: fixed;
     top: 0;
     left: 0;
-    background-color: white;
+    height: 3em;
+    margin-bottom: 1em;
     z-index: 1;
+    display: none;
 }
 
 .mobile-nav-open-icon{
@@ -87,6 +103,41 @@ nav ul li{
     align-items: center;
 }
 
+.sidenav-container-openNav {
+    height: 100%;
+    width: 33%;
+    position: fixed;
+    z-index: 3;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sidenav-container-openNav a {
+    text-decoration: none;
+    font-size: 1rem;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+    margin: 10px 0;
+}
+
+.sidenav-container-openNav a:hover {
+    color: #f1f1f1;
+}
+
+.sidenav-container-openNav .closebtn {
+    font-size: 3rem;
+    font-weight: 700;
+    color:#C9002B ;
+    padding-right: 1rem;
+}
 .sidenav-container a {
     text-decoration: none;
     font-size: 1rem;
@@ -107,11 +158,23 @@ nav ul li{
     padding-right: 1rem;
 }
 
-.sidenav-container .drawer-close-button{
+.sidenav-container-openNav .drawer-close-button{
     height: 3rem;
     width: 100%;
     display: flex;
     justify-content: flex-end;
     align-items: center;
     margin-bottom: 3rem;
-} */
+}
+
+@media only screen and (max-width: 960px){
+
+nav ul{
+    display: none;
+}
+
+#span-nav{
+    display: block;
+}
+
+}
