@@ -9,6 +9,7 @@ import User from "./components/User";
 import { authenticate } from "./services/auth";
 import Home from "./components/Home/Home";
 import Generator from "./components/Generator/Generator";
+import ConditionalNav from "./components/ConditionalNav";
 
 function App() {
   const [authenticated, setAuthenticated] = useState(false);

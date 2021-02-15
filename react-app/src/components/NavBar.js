@@ -1,15 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import LogoutButton from './auth/LogoutButton';
 import '../index.css'
+import { authenticate } from '../services/auth';
+import ConditionalNav from './ConditionalNav'
+import ConditionalNavDrawer from './ConditionalNavDrawer';
 
-// const mySideNav = React.forwardRef((props, red) => {
-//   return <div id="mySidenav" className="sidenav-container"></div>
-// });
 
-// const Backdrop = React.forwardRef((props, ref) => {
-//   return <div className="backdrop-container" id="backdrop"></div>
-// });
+
 
 const NavBar = ({ setAuthenticated }) => {
 
@@ -37,8 +35,7 @@ const NavBar = ({ setAuthenticated }) => {
 
         <NavLink to="/" onClick={() => closeNav()} id="home-link">Home</NavLink>
         <NavLink to="/generator" onClick={() => closeNav()} id="about-link">Generator</NavLink>
-        <NavLink to="/login" onClick={() => closeNav()} id="works-link">Login</NavLink>
-        <NavLink to="/signup" onClick={() => closeNav()} id="contact-link">Signup</NavLink>
+        <ConditionalNavDrawer setAuthenticated={setAuthenticated} closeNav={closeNav} />
 
       </div>
 
@@ -59,19 +56,7 @@ const NavBar = ({ setAuthenticated }) => {
               Generator
             </NavLink>
           </li>
-          <li>
-            <NavLink to="/login" exact={true} activeClassName="active">
-              Login
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/sign-up" exact={true} activeClassName="active">
-              Sign Up
-            </NavLink>
-          </li>
-          <li>
-            <LogoutButton setAuthenticated={setAuthenticated} />
-          </li>
+          <ConditionalNav setAuthenticated={setAuthenticated} />
         </ul>
       </nav>
     </div>

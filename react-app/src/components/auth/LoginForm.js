@@ -12,6 +12,7 @@ const LoginForm = ({ authenticated, setAuthenticated }) => {
     const user = await login(email, password);
     if (!user.errors) {
       setAuthenticated(true);
+      window.location.reload()
     } else {
       setErrors(user.errors);
     }
@@ -26,7 +27,7 @@ const LoginForm = ({ authenticated, setAuthenticated }) => {
   };
 
   if (authenticated) {
-    return <Redirect to="/" />;
+    return <Redirect push to="/" />;
   }
 
   return (

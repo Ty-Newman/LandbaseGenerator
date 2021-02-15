@@ -61,7 +61,6 @@ nav ul li button:hover{
     color: black;
 }
 
-
 /* Responsive nav drawer */
 .backdrop-container{
     display: none;
@@ -147,13 +146,18 @@ nav ul li button:hover{
     align-items: center;
 }
 
-.sidenav-container-openNav a {
+.sidenav-container-openNav a,button {
     text-decoration: none;
     font-size: 1rem;
     color: #818181;
     display: block;
     transition: 0.3s;
     margin: 10px 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.sidenav-container-openNav button{
+    background-color: rgba(0,0,0,0);
+    border: none;
 }
 
 .sidenav-container-openNav a:hover {
