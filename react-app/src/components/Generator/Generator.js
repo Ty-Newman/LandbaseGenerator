@@ -76,16 +76,23 @@ const Generator = () => {
                     <input type='number' id='green-devotion' disabled={!green} onChange={(e) => setGreenDevotion(e.target.value)} />
                 </div>
 
-                <label htmlFor='num-of-lands'>Number of lands</label>
-                <input type='text' id='number-of-lands' name='num-of-lands' onChange={(e) => setNumOfLands(e.target.value)} />
+                <div id='form-bottom-generator'>
+                    <div id='num-lands-container'>
+                        <label htmlFor='num-of-lands'>Number of lands</label>
+                        <input type='text' id='number-of-lands' name='num-of-lands' onChange={(e) => setNumOfLands(e.target.value)} />
+                    </div>
 
-                <label htmlFor='format'>Select your format</label>
-                <select name='format' id='format-selector' onChange={(e) => setFormat(e.target.value)}>
-                    <option value='standard'>Standard</option>
-                    <option value='commander'>Commander</option>
-                    <option value='modern'>Modern</option>
-                </select>
-                <button type='submit'>Generate</button>
+                    <div id='format-container'>
+                        <label htmlFor='format'>Select your format</label>
+                        <select name='format' id='format-selector' onChange={(e) => setFormat(e.target.value)}>
+                            <option value='standard'>Standard</option>
+                            <option value='commander'>Commander</option>
+                            <option value='modern'>Modern</option>
+                        </select>
+                    </div>
+                    <button type='submit'>Generate</button>
+                </div>
+
             </form>
         </div>
     )
