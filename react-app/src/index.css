@@ -146,7 +146,7 @@ nav ul li button:hover{
     align-items: center;
 }
 
-.sidenav-container-openNav a,button {
+.sidenav-container-openNav a,#side-nav-logout {
     text-decoration: none;
     font-size: 1rem;
     color: #818181;
@@ -155,7 +155,7 @@ nav ul li button:hover{
     margin: 10px 0;
     font-family: Arial, Helvetica, sans-serif;
 }
-.sidenav-container-openNav button{
+.sidenav-container-openNav #side-nav-logout{
     background-color: rgba(0,0,0,0);
     border: none;
 }

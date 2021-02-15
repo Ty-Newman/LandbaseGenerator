@@ -22,7 +22,7 @@ const ConditionalNavDrawer = ({ setAuthenticated, closeNav }) => {
 
     if (isLoggedIn){
       return(
-        <LogoutButton setAuthenticated={setAuthenticated} />
+        <LogoutButton setAuthenticated={setAuthenticated} id='side-nav-logout' />
       )
     } else{
       return(

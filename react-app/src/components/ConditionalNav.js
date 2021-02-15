@@ -23,7 +23,7 @@ const ConditionalNav = ({ setAuthenticated }) => {
     if (isLoggedIn){
       return(
         <li>
-        <LogoutButton setAuthenticated={setAuthenticated} forceRefresh={true} />
+        <LogoutButton setAuthenticated={setAuthenticated} id='main-nav-logout' />
         </li>
       )
     } else{
