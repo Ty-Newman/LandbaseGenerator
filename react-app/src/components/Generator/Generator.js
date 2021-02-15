@@ -26,7 +26,27 @@ const Generator = () => {
 
     const [numOfLands, setNumOfLands] = useState('');
     const [format, setFormat] = useState('standard');
+    const [hiddenOrNah, setHiddenOrNah] = useState('generator-results-hidden')
+    const [generatedLands, setGeneratedLands] = useState('')
 
+    const resetHandler = () => {
+        setWhite(false);
+        setBlue(false);
+        setBlack(false);
+        setRed(false);
+        setGreen(false);
+
+        setWhiteDevotion('');
+        setBlueDevotion('');
+        setBlackDevotion('');
+        setRedDevotion('');
+        setGreenDevotion('');
+
+        setNumOfLands('');
+        setFormat('standard');
+        setHiddenOrNah('generator-results-hidden')
+        setGeneratedLands('')
+    }
 
     const submitHandler = async (e) => {
         e.preventDefault();
@@ -40,17 +60,41 @@ const Generator = () => {
 
         let payload = {
             colors: colors,
-            whiteDevotion: whiteDevotion,
-            blueDevotion: blueDevotion,
-            blackDevotion: blackDevotion,
-            redDevotion: redDevotion,
-            greenDevotion: greenDevotion,
+            white: whiteDevotion,
+            blue: blueDevotion,
+            black: blackDevotion,
+            red: redDevotion,
+            green: greenDevotion,
             numOfLands: numOfLands,
             format: format
         }
+
         const response = await fetchGenerate(payload)
         console.log(response)
 
+        let displayText = ''
+        response.colors.forEach((color) => {
+            switch(color){
+                case 'white':
+                    displayText += `${response[color]} Plain \n`;
+                    break;
+                case 'blue':
+                    displayText += `${response[color]} Island \n`;
+                    break;
+                case 'black':
+                    displayText += `${response[color]} Swamp \n`;
+                    break;
+                case 'red':
+                    displayText += `${response[color]} Mountain \n`;
+                    break;
+                case 'green':
+                    displayText += `${response[color]} Forest \n`;
+                    break;
+            }
+        });
+
+        setHiddenOrNah('generator-results-not-hidden');
+        setGeneratedLands(displayText);
     }
 
     return(
@@ -92,6 +136,8 @@ const Generator = () => {
                     </div>
                     <button type='submit'>Generate</button>
                 </div>
+                    <textarea className={hiddenOrNah} value={generatedLands}></textarea>
+                    <button type='reset' className={hiddenOrNah} onClick={() => resetHandler()}>Clear</button>
 
             </form>
         </div>

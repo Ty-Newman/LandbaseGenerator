@@ -1,3 +1,11 @@
+input, select, textarea{
+    background-color: rgb(190, 188, 188);
+}
+
+input[type=number]:disabled{
+    background-color: rgb(65, 64, 64);
+}
+
 input[type=checkbox]{
     display: none;
 }
@@ -19,7 +27,7 @@ input[type=checkbox] + label img{
     box-shadow: 0 0 28px 18px rgb(0, 140, 255);
 }
 #black-selector:checked + label img{
-    box-shadow: 0 0 28px 18px rgb(34, 35, 36);
+    box-shadow: 0 0 28px 18px rgb(47, 8, 56);
 }
 #red-selector:checked + label img{
     box-shadow: 0 0 28px 18px rgb(250, 64, 64);
@@ -42,11 +50,11 @@ input[type=checkbox] + label img{
     border-radius: 5px;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
+    height: 100%;
 }
 
 #color-devotion input{
     width: 45px;
-    /* margin-left: 5.55%; */
 }
 
 #color-devotion{
@@ -77,4 +85,17 @@ input[type=checkbox] + label img{
 }
 #num-lands-container > input{
     width: 98px;
+}
+
+/* generator result styles */
+#g-form textarea{
+    width: 100%;
+    min-height: 15em;
+    margin-top: 5em;
+}
+.generator-results-not-hidden{
+    display: inline-block;
+}
+.generator-results-hidden{
+    display: none;
 }
