@@ -22,6 +22,7 @@ nav{
     backdrop-filter: blur(4px);
     height: 3em;
     margin-bottom: 1em;
+    font-family: Arial, Helvetica, sans-serif;
 }
 nav ul{
     display: flex;
@@ -31,6 +32,33 @@ nav ul{
 }
 nav ul li{
     margin-top: 0.7em;
+    margin-right: 1em;
+}
+nav ul li a{
+    text-decoration: none;
+    color: whitesmoke;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+nav ul li a:hover{
+    color: black;
+}
+nav ul li .active{
+    text-decoration: underline;
+}
+nav ul li button{
+    border: none;
+    background-color: rgba(0,0,0,0);
+    color: whitesmoke;
+    font-size: 1.5em;
+    font-weight: bold;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+}
+nav ul li button:hover{
+    color: black;
 }
 
 
