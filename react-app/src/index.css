@@ -199,7 +199,7 @@ nav ul li button:hover{
     margin-bottom: 3rem;
 }
 
-@media screen and (max-width: 960px){
+@media screen and (max-width: 1450px){
 
 nav ul{
     display: none;
