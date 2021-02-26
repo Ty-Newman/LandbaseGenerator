@@ -8,11 +8,19 @@ const UserDecks = () => {
 
     const [loaded, setLoaded] = useState(false)
     const [returnedDecks, setReturnedDecks] = useState({})
+    const [decklist, setDecklist] = useState('');
     let userId;
 
     function getRandomInt(max) {
         return Math.floor(Math.random() * Math.floor(max));
-      }
+    }
+
+    const deckClickHandler = (e) =>{
+        const deckId = Number(e.target.value) - 2
+        let textFormating = returnedDecks.decks[deckId].decklist
+        textFormating = `        ${textFormating}`
+        setDecklist(textFormating)
+    }
 
 
     useEffect(() => {
@@ -22,6 +30,7 @@ const UserDecks = () => {
                 userId = user.id;
                 let response = await fetchUserDecks(userId)
                 setReturnedDecks(response);
+                console.log(response)
                 console.log(JSON.parse(response.decks[0].color))
             }
             setLoaded(true);
@@ -37,7 +46,7 @@ const UserDecks = () => {
             <div id='deck-select'>
                 <ul>
                     {loaded ? returnedDecks.decks.map((deck) => {
-                        return <li className={`${JSON.parse(deck.color)[getRandomInt(JSON.parse(deck.color).length)]}`}>{deck.name}</li>
+                        return <li onClick={(e) => {deckClickHandler(e)}} value={deck.id} className={`${JSON.parse(deck.color)[getRandomInt(JSON.parse(deck.color).length)]}`}>{deck.name}</li>
                     }) : <li>Loading</li>}
                     <li className='Blue'>Mono Blue</li>
                     <li className='Black'>Mono Black</li>
@@ -46,7 +55,13 @@ const UserDecks = () => {
                 </ul>
             </div>
             <div id='deck-details'>
+                    <div className='deck-form-container'>
+                        <form id='deck-detail-form'>
+                            <textarea disabled='disabled' value={decklist}>
 
+                            </textarea>
+                        </form>
+                    </div>
             </div>
         </div>
     )
