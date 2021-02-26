@@ -10,6 +10,7 @@ import { authenticate } from "./services/auth";
 import Home from "./components/Home/Home";
 import Generator from "./components/Generator/Generator";
 import ConditionalNav from "./components/ConditionalNav";
+import UserDecks from "./components/UserDecks/UserDecks";
 
 function App() {
   const [authenticated, setAuthenticated] = useState(false);
@@ -20,6 +21,7 @@ function App() {
       const user = await authenticate();
       if (!user.errors) {
         setAuthenticated(true);
+        console.log(user)
       }
       setLoaded(true);
     })();
@@ -45,6 +47,9 @@ function App() {
         <Route path="/generator" exact={true}>
           <Generator />
         </Route>
+        <ProtectedRoute path='/my-decks' exact={true} authenticated={authenticated}>
+          <UserDecks />
+        </ProtectedRoute>
         <ProtectedRoute path="/users/:userId" exact={true} authenticated={authenticated}>
           <User />
         </ProtectedRoute>
