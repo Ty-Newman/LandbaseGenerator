@@ -31,34 +31,41 @@ const LoginForm = ({ authenticated, setAuthenticated }) => {
   }
 
   return (
-    <form onSubmit={onLogin}>
-      <div>
-        {errors.map((error) => (
-          <div>{error}</div>
-        ))}
-      </div>
-      <div>
-        <label htmlFor="email">Email</label>
-        <input
-          name="email"
-          type="text"
-          placeholder="Email"
-          value={email}
-          onChange={updateEmail}
-        />
-      </div>
-      <div>
-        <label htmlFor="password">Password</label>
-        <input
-          name="password"
-          type="password"
-          placeholder="Password"
-          value={password}
-          onChange={updatePassword}
-        />
-        <button type="submit">Login</button>
-      </div>
-    </form>
+    <div id='login-wrapper'>
+    <h1 id='login-logo'>Landbase Generator</h1>
+      <form onSubmit={onLogin}>
+        <ul className='flex-outer'>
+          <li>
+            {errors.map((error) => (
+              <li id='login-errors'>{error}</li>
+            ))}
+          </li>
+          <li>
+            <label htmlFor="email">Email</label>
+            <input
+              name="email"
+              type="text"
+              placeholder="Email"
+              value={email}
+              onChange={updateEmail}
+            />
+          </li>
+          <li>
+            <label htmlFor="password">Password</label>
+            <input
+              name="password"
+              type="password"
+              placeholder="Password"
+              value={password}
+              onChange={updatePassword}
+            />
+          </li>
+          <li>
+            <button type="submit">Login</button>
+          </li>
+        </ul>
+      </form>
+    </div>
   );
 };
 
