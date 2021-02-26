@@ -22,9 +22,16 @@ const ConditionalNav = ({ setAuthenticated }) => {
 
     if (isLoggedIn){
       return(
-        <li>
-        <LogoutButton setAuthenticated={setAuthenticated} id='main-nav-logout' />
-        </li>
+        <>
+          <li>
+            <LogoutButton setAuthenticated={setAuthenticated} id='main-nav-logout' />
+          </li>
+          <li>
+            <NavLink to="/my-decks" exact={true} activeClassName="active">
+              My Decks
+            </NavLink>
+          </li>
+        </>
       )
     } else{
       return(

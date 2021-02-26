@@ -22,7 +22,12 @@ const ConditionalNavDrawer = ({ setAuthenticated, closeNav }) => {
 
     if (isLoggedIn){
       return(
-        <LogoutButton setAuthenticated={setAuthenticated} id='side-nav-logout' />
+        <>
+          <NavLink to="/my-decks" exact={true} activeClassName="active" onClick={() => closeNav()}>
+            My Decks
+          </NavLink>
+          <LogoutButton setAuthenticated={setAuthenticated} id='side-nav-logout' />
+        </>
       )
     } else{
       return(

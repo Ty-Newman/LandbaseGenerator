@@ -70,7 +70,6 @@ const Generator = () => {
         }
 
         const response = await fetchGenerate(payload)
-        console.log(response)
 
         let displayText = ''
         response.colors.forEach((color) => {

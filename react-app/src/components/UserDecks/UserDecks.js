@@ -30,8 +30,6 @@ const UserDecks = () => {
                 userId = user.id;
                 let response = await fetchUserDecks(userId)
                 setReturnedDecks(response);
-                console.log(response)
-                console.log(JSON.parse(response.decks[0].color))
             }
             setLoaded(true);
         })();
