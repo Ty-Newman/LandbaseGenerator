@@ -24,12 +24,12 @@ const ConditionalNav = ({ setAuthenticated }) => {
       return(
         <>
           <li>
-            <LogoutButton setAuthenticated={setAuthenticated} id='main-nav-logout' />
-          </li>
-          <li>
             <NavLink to="/my-decks" exact={true} activeClassName="active">
               My Decks
             </NavLink>
+          </li>
+          <li>
+            <LogoutButton setAuthenticated={setAuthenticated} id='main-nav-logout' />
           </li>
         </>
       )
