@@ -9,7 +9,7 @@ const LoginForm = ({ authenticated, setAuthenticated }) => {
 
   const onLogin = async (e) => {
     e.preventDefault();
-    const user = await login(email, password);
+    const user =  await login(email, password);
     if (!user.errors) {
       setAuthenticated(true);
       window.location.reload()
@@ -17,6 +17,16 @@ const LoginForm = ({ authenticated, setAuthenticated }) => {
       setErrors(user.errors);
     }
   };
+
+  const onDemo = async (e) => {
+    setEmail('demo@aa.io');
+    setPassword('password');
+    const user = await login(email, password);
+    if (!user.errors) {
+      setAuthenticated(true);
+      window.location.reload()
+    }
+  }
 
   const updateEmail = (e) => {
     setEmail(e.target.value);
@@ -62,6 +72,7 @@ const LoginForm = ({ authenticated, setAuthenticated }) => {
           </li>
           <li>
             <button type="submit">Login</button>
+            <button type="button" onClick={onDemo} value='Demo'>Demo</button>
           </li>
         </ul>
       </form>
