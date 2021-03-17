@@ -3,6 +3,7 @@ import { authenticate } from '../../services/auth';
 import './UserDecks.css'
 
 import {fetchUserDecks} from '../../services/decks';
+import CreateDeck from './CreateDeck';
 
 const UserDecks = () => {
 
@@ -54,11 +55,12 @@ const UserDecks = () => {
             </div>
             <div id='deck-details'>
                     <div className='deck-form-container'>
-                        <form id='deck-detail-form'>
+                        <form id='deck-detail-form' hidden='true'>
                             <textarea disabled='disabled' value={decklist}>
 
                             </textarea>
                         </form>
+                        <CreateDeck />
                     </div>
             </div>
         </div>

@@ -2,8 +2,12 @@ import React, { useEffect, useState } from 'react';
 import { authenticate } from '../../services/auth';
 import './UserDecks.css'
 
-const CreateUserDeck = () => {
-
+const CreateDeck = () => {
+    return (
+        <form>
+            
+        </form>
+    )
 }
 
-export default CreateUserDeck;
+export default CreateDeck;
