@@ -8,6 +8,12 @@ body{
     background-color: #7C838D;
     background-size: 100%;
 }
+footer a{
+    padding-left: 2em;
+}
+footer a img{
+    height: 64px;
+}
 /* Nav bar styles */
 #root{
     margin-top: 0;
