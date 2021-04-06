@@ -55,7 +55,7 @@ const UserDecks = () => {
             </div>
             <div id='deck-details'>
                     <div className='deck-form-container'>
-                        <form id='deck-detail-form' hidden='true'>
+                        <form id='deck-detail-form' >
                             <textarea disabled='disabled' value={decklist}>
 
                             </textarea>
